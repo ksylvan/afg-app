@@ -1,6 +1,28 @@
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-amber-600 px-4 py-20 text-center text-white md:py-32">
+        <div className="container mx-auto">
+          <h1 className="mb-4 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
+            Alleluia Folk Group
+          </h1>
+          <p className="mb-8 text-xl md:text-2xl lg:text-3xl text-blue-100">
+            Serving Holy Family Parish through the gift of music
+          </p>
+          <p className="mb-6 max-w-2xl mx-auto text-lg md:text-xl text-blue-200">
+            Join our community of 60+ musicians in creating prayerful, reverent, and joyous liturgical music.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#events" className="inline-block rounded-lg bg-amber-500 px-8 py-3 font-semibold text-blue-900 shadow-lg transition-colors hover:bg-amber-400">
+              View Events
+            </a>
+            <a href="#join" className="inline-block rounded-lg border-2 border-white px-8 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-blue-900">
+              Join Our Ministry
+            </a>
+          </div>
+        </div>
+      </section>
+
       <main className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-6 text-4xl font-bold leading-tight text-blue-900 md:text-5xl lg:text-6xl">
