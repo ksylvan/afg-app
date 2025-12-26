@@ -1,0 +1,4 @@
+config.db.lock
+counter.db.lock
+events.db.lock
+persons.db.lock
