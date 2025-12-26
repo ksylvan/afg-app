@@ -47,7 +47,7 @@ export default function Home() {
           <div className="mt-16 rounded-lg bg-gradient-to-r from-blue-900 to-blue-800 p-8 text-white shadow-lg md:p-12">
             <h2 className="mb-4 text-2xl font-bold md:text-3xl">Join Our Ministry</h2>
             <p className="mb-6 text-lg leading-relaxed text-blue-100">
-              Whether you're a vocalist or instrumentalist, we welcome your gifts. Our group
+              Whether you&apos;re a vocalist or instrumentalist, we welcome your gifts. Our group
               of 60+ members represents a wide range of musical backgrounds and experience
               levels, united by a shared love of liturgical music.
             </p>
