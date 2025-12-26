@@ -2,16 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 import AuthButton from './AuthButton';
 
 export default function Header() {
   const pathname = usePathname();
+  const { status } = useSession();
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Events', path: '/events' },
     { name: 'Calendar', path: '/calendar' },
     { name: 'About', path: '/about' },
+    ...(status !== 'authenticated' ? [{ name: 'Login', path: '/login' }] : []),
   ];
 
   return (

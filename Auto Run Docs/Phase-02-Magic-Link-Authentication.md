@@ -14,5 +14,5 @@ This phase implements authentication using NextAuth v5 with magic link email-bas
 - [x] Update src/lib/auth.ts to include session management and protect routes configuration
 - [x] Create src/middleware.ts file to handle protected route redirects and authentication state
 - [x] Create src/app/login/page.tsx with simple login form that accepts email only and displays "Magic link sent to your email" message on submission
-- [ ] Add login link to navigation in Header.tsx that only shows when user is not authenticated
+- [x] Add login link to navigation in Header.tsx that only shows when user is not authenticated
 - [ ] Verify authentication flow: login form submission shows success message, AuthButton toggles correctly between sign in/sign out
