@@ -3,13 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --afg-blue-900: #1e3a8a;
+  --afg-blue-800: #1e40af;
+  --afg-amber-600: #d97706;
+  --afg-amber-500: #f59e0b;
+  --afg-amber-400: #fbbf24;
+  --afg-amber-300: #fcd34d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +22,19 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
+  body {
+    font-size: 0.9375rem;
+  }
 }
