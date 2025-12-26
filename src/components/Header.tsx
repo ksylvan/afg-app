@@ -2,15 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import AuthButton from './AuthButton';
 
 export default function Header() {
   const pathname = usePathname();
+  const { status } = useSession();
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Events', path: '/events' },
     { name: 'Calendar', path: '/calendar' },
     { name: 'About', path: '/about' },
+    ...(status !== 'authenticated' ? [{ name: 'Login', path: '/login' }] : []),
   ];
 
   return (
@@ -23,21 +27,24 @@ export default function Header() {
             </h1>
           </Link>
           
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.path}
-                className={`text-sm font-medium transition-colors duration-200 md:text-base ${
-                  pathname === link.path
-                    ? 'text-amber-400'
-                    : 'text-blue-100 hover:text-amber-400'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            <nav className="flex flex-wrap gap-4 md:gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={`text-sm font-medium transition-colors duration-200 md:text-base ${
+                    pathname === link.path
+                      ? 'text-amber-400'
+                      : 'text-blue-100 hover:text-amber-400'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+            <AuthButton />
+          </div>
         </div>
       </div>
     </header>
