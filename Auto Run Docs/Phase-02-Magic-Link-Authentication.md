@@ -4,7 +4,7 @@ This phase implements authentication using NextAuth v5 with magic link email-bas
 
 ## Tasks
 
-- [ ] Install NextAuth v5 (next-auth@beta) and required dependencies using npm install next-auth@beta
+- [x] Install NextAuth v5 (next-auth@beta) and required dependencies using npm install next-auth@beta
 - [ ] Create .env.local file with NEXTAUTH_URL and NEXTAUTH_SECRET placeholder values
 - [ ] Update tsconfig.json to include path alias "@/*" pointing to "./src/*" for cleaner imports
 - [ ] Create src/lib/auth.ts file with NextAuth v5 configuration, credentials provider using email as identifier
