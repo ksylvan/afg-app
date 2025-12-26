@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
 import { signIn } from 'next-auth/react';
+import { useState, type FormEvent } from 'react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -15,11 +15,16 @@ export default function LoginPage() {
     setIsLoading(true);
     
     try {
-      await signIn('credentials', { 
+      const result = await signIn('credentials', { 
         email,
         redirect: false
       });
-      setShowSuccess(true);
+      
+      if (result?.ok) {
+        setShowSuccess(true);
+      } else {
+        console.error('Sign in failed:', result?.error);
+      }
     } catch (error) {
       console.error('Sign in error:', error);
     } finally {
