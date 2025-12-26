@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import AuthButton from './AuthButton';
 
 export default function Header() {
   const pathname = usePathname();
@@ -23,21 +24,24 @@ export default function Header() {
             </h1>
           </Link>
           
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.path}
-                className={`text-sm font-medium transition-colors duration-200 md:text-base ${
-                  pathname === link.path
-                    ? 'text-amber-400'
-                    : 'text-blue-100 hover:text-amber-400'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            <nav className="flex flex-wrap gap-4 md:gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={`text-sm font-medium transition-colors duration-200 md:text-base ${
+                    pathname === link.path
+                      ? 'text-amber-400'
+                      : 'text-blue-100 hover:text-amber-400'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+            <AuthButton />
+          </div>
         </div>
       </div>
     </header>
